@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b910b08eadf17654d8718d2f682910e5, type: 3}
+  m_Name: Missimon
+  m_EditorClassIdentifier: Assembly-CSharp::DigimonType
+  typeName: Missimon
+  animator: {fileID: 9100000, guid: abc19e01cea2230478158559b9249ab9, type: 2}
+  evolveLevel: 3
+  digimonPortrait: {fileID: 5194171231279644945, guid: 12b7447383c0170488efce49989a6124, type: 3}
+  OrderEvolution: {fileID: 11400000, guid: 1acdf82236fd7e2448cd1cdab95af97e, type: 2}
+  ChaosEvolution: {fileID: 11400000, guid: 1acdf82236fd7e2448cd1cdab95af97e, type: 2}
+  junkEvolution: {fileID: 11400000, guid: 1acdf82236fd7e2448cd1cdab95af97e, type: 2}

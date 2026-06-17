@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b910b08eadf17654d8718d2f682910e5, type: 3}
+  m_Name: Commandramon
+  m_EditorClassIdentifier: Assembly-CSharp::DigimonType
+  typeName: Commandramon
+  animator: {fileID: 9100000, guid: 5584f61b522ddaf40823259570f4ec19, type: 2}
+  evolveLevel: 10
+  digimonPortrait: {fileID: -8054226912570311282, guid: 12b7447383c0170488efce49989a6124, type: 3}
+  OrderEvolution: {fileID: 0}
+  ChaosEvolution: {fileID: 0}
+  junkEvolution: {fileID: 0}

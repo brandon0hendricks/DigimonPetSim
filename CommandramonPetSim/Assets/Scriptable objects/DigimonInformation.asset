@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d2eb31c6023310429ebd5db581aa3b7, type: 3}
   m_Name: DigimonInformation
   m_EditorClassIdentifier: Assembly-CSharp::DigimonInformation
-  level: 0
-  portrait: {fileID: -8054226912570311282, guid: 12b7447383c0170488efce49989a6124, type: 3}
+  level: 5
   exp: 0
-  currentForm: egg
-  chaos: 0
-  order: 0
+  digimonType: {fileID: 11400000, guid: 1acdf82236fd7e2448cd1cdab95af97e, type: 2}
+  chaos: 7
+  order: 1

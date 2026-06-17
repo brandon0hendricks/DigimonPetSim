@@ -28,7 +28,7 @@ public class MainMenu : MonoBehaviour
     {
         for(int i = 0; i < digimonPortraits.Length; i++)
         {
-            digimonPortraits[i].sprite = digimonInformation.portrait;
+            digimonPortraits[i].sprite = digimonInformation.digimonType.digimonPortrait;
         }
     }
     private void Start()
@@ -58,7 +58,7 @@ public class MainMenu : MonoBehaviour
         dialogueBox.dialogueChoices.SetActive(false);
         getRandomConversation();
         MainMenuUI.SetActive(false);
-        DigimonController.instance.StopMoving();
+        DigimonController.instance.inAction = true;
         assignPortrait();
     }
     public void ExitStats()
@@ -71,18 +71,18 @@ public class MainMenu : MonoBehaviour
       
         TalkMenu.SetActive(false);
         MainMenuUI.SetActive(true);
-        DigimonController.instance.StartMoving();
+        DigimonController.instance.inAction = false;
     }
     public void OrderChoice()
     {
         digimonInformation.order++;
-        digimonInformation.exp++;
+        DigimonController.instance.gainExp(2);
         ExitTalk();
     }
     public void ChoasChoice()
     {
         digimonInformation.chaos++;
-        digimonInformation.exp++;
+        DigimonController.instance.gainExp(2);
         ExitTalk();
     }
 
