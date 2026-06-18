@@ -76,13 +76,13 @@ public class MainMenu : MonoBehaviour
     public void OrderChoice()
     {
         digimonInformation.order++;
-        DigimonController.instance.gainExp(2);
+        DigimonController.instance.digimonInformation.gainExp(2);
         ExitTalk();
     }
     public void ChoasChoice()
     {
         digimonInformation.chaos++;
-        DigimonController.instance.gainExp(2);
+        DigimonController.instance.digimonInformation.gainExp(2);
         ExitTalk();
     }
 

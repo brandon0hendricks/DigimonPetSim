@@ -1,5 +1,8 @@
 using UnityEngine;
 
+
+//Responsible for controll over player digimon
+//Holds current information and it's state
 public class DigimonController : MonoBehaviour
 {
     public static DigimonController instance;
@@ -23,7 +26,7 @@ public class DigimonController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        digimonInformation.setDigimonInfo(this);
+        digimonInformation.setDigimonAnimator(this);
     }
 
 
@@ -34,35 +37,20 @@ public class DigimonController : MonoBehaviour
     private void Update()
     {
         controlMovement();
-
-    }
-
-
-    //evolve when level is high enough and gain EXP passiveley
-    void manageLevel()
-    {
-        if(digimonInformation.digimonType.evolveLevel <= digimonInformation.level)
+        if(digimonInformation.level == 1 && digimonInformation.digimonType.typeName != "Commandramon")
         {
             startEvolution();
         }
+
+
     }
 
-    public void gainExp(int expGained) //This is called when the player wins a battle, it adds exp and checks if the digimon should evolve
-    {
-        digimonInformation.exp += expGained;
-        if(digimonInformation.exp >= 2)
-        {
-            digimonInformation.level++;
-            digimonInformation.exp = 0;
-            manageLevel();
-        }
-    }
+    
 
     void startEvolution() //Starts evolution process, triggers animation and freezes movement
     {
         inAction = true;
-        evolve();
-        //digimonAnimator.SetTrigger("evolve");
+        digimonAnimator.SetTrigger("evolve");
     }
 
 
@@ -72,12 +60,12 @@ public class DigimonController : MonoBehaviour
         if(digimonInformation.order >= digimonInformation.chaos)
         {
             digimonInformation.Evolve("order");
-            digimonInformation.setDigimonInfo(this);
+            digimonInformation.setDigimonAnimator(this);
         }
         else
         {
             digimonInformation.Evolve("chaos");
-            digimonInformation.setDigimonInfo(this);
+            digimonInformation.setDigimonAnimator(this);
         }
         inAction = false;
     }

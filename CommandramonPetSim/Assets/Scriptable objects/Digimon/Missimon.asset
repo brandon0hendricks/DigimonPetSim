@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DigimonType
   typeName: Missimon
   animator: {fileID: 9100000, guid: abc19e01cea2230478158559b9249ab9, type: 2}
-  evolveLevel: 3
+  evolveLevel: 2
   digimonPortrait: {fileID: 5194171231279644945, guid: 12b7447383c0170488efce49989a6124, type: 3}
   OrderEvolution: {fileID: 11400000, guid: 1acdf82236fd7e2448cd1cdab95af97e, type: 2}
   ChaosEvolution: {fileID: 11400000, guid: 1acdf82236fd7e2448cd1cdab95af97e, type: 2}

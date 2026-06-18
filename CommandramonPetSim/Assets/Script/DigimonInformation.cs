@@ -18,7 +18,8 @@ public class DigimonInformation : ScriptableObject
     public int order;
 
 
-    public void setDigimonInfo(DigimonController controller)
+    //changes animator
+    public void setDigimonAnimator(DigimonController controller)
     {
         controller.digimonAnimator.runtimeAnimatorController = digimonType.animator;
     }
@@ -26,6 +27,15 @@ public class DigimonInformation : ScriptableObject
     void changeDigimonType(DigimonType newType)
     {
         digimonType = newType;
+    }
+    public void gainExp(int expGained) //This is called when the player wins a battle, it adds exp and checks if the digimon should evolve
+    {
+        exp += expGained;
+        if (exp >= 2)
+        {
+            level++;
+            exp = 0;
+        }
     }
 
     public void Evolve(string evolutionType) //gets the next evolutin and sets the new digimon type
