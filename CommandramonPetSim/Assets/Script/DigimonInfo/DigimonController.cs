@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 
@@ -16,6 +17,8 @@ public class DigimonController : MonoBehaviour
     public bool moving;
     public bool inAction;
 
+    IEnumerator ExpGain;
+
     private void Awake()
     {
         if (instance == null)
@@ -33,6 +36,7 @@ public class DigimonController : MonoBehaviour
     private void Start()
     {
         digimonAnimator = GetComponent<Animator>();
+        ExpGain = flavorGainExp();
     }
     private void Update()
     {
@@ -41,8 +45,6 @@ public class DigimonController : MonoBehaviour
         {
             startEvolution();
         }
-
-
     }
 
     
@@ -83,6 +85,7 @@ public class DigimonController : MonoBehaviour
         }
     }
 
+
     public void Reset() //Used to reset the digimon information when the player dies or wants to start over
     {
         digimonInformation.level = 0;
@@ -90,6 +93,33 @@ public class DigimonController : MonoBehaviour
         digimonInformation.chaos = 0;
         digimonInformation.exp = 0;
         moving = false;
+    }
+
+    public void StartGainingExpCoroutine()
+    {
+
+        StopCoroutine(ExpGain);
+        ExpGain = flavorGainExp();
+        transform.localScale = Vector3.one;
+        StartCoroutine(ExpGain);
+    }
+
+    //Adds impact to gaining exp
+    IEnumerator flavorGainExp()
+    {
+        Vector3 sizeincrease = transform.localScale * 1.02f;
+        while(transform.localScale != sizeincrease)
+        {
+            transform.localScale = Vector3.Lerp(transform.localScale, sizeincrease, .15f);
+            yield return null;
+        }
+        digimonInformation.gainExp(1);
+        while (transform.localScale != Vector3.one)
+        {
+            transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one, .15f);
+            yield return null;
+        }
+        transform.localScale = Vector3.one;
     }
 }
 
