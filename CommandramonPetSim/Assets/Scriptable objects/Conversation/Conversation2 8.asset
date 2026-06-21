@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad70bb554bd1d5044ae17838904cd899, type: 3}
   m_Name: Conversation2 8
   m_EditorClassIdentifier: Assembly-CSharp::ConversationTypes
-  conversation: '"Kyle... why do we have to fight so much? My heart hurts when the
-    other Digimon cry...'
+  conversation: Kyle... why do we have to fight so much? My heart hurts when the
+    other Digimon cry...
   orderResponse: Just kill.
   chaosResponse: 'Don''t worry.
 

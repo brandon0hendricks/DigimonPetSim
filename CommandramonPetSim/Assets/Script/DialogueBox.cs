@@ -9,8 +9,36 @@ public class DialogueBox : MonoBehaviour
     [SerializeField] public TextMeshProUGUI dialogueText;
     [HideInInspector] public static bool inDialogue = false;
 
-    private float textSpeed = 0.01f;
+    private float textSpeed = 0.04f;
     public GameObject dialogueChoices;
+
+    [SerializeField] private TextMeshProUGUI orderChoice;
+    [SerializeField] private TextMeshProUGUI chaoseChoice;
+
+    public Image digimonPortrait;
+
+    public ConversationTypes[] conversationTypes;
+
+    private void OnEnable()
+    {
+        getRandomConversation();
+        dialogueChoices.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        
+    }
+
+    void getRandomConversation()
+    {
+        int randomIndex = Random.Range(0, conversationTypes.Length);
+        activateDialogue(conversationTypes[randomIndex].conversation);
+        orderChoice.text = conversationTypes[randomIndex].orderResponse;
+        chaoseChoice.text = conversationTypes[randomIndex].chaosResponse;
+
+    }
+
     public void activateDialogue(string textToDisplay) //Start Dialogue
     {
         StartCoroutine(enableDialogue(textToDisplay));
@@ -20,7 +48,6 @@ public class DialogueBox : MonoBehaviour
     {
         Debug.Log("Dialogue Box Activated");
         dialogueText.text = ""; //clear text;
-        Debug.Log("Dialogue Box Enabled");
 
         char[] chars = textToDisplay.ToCharArray(); //characters to be displayed;
         for (int b = 0; b < chars.Length; b++)
@@ -32,6 +59,22 @@ public class DialogueBox : MonoBehaviour
         dialogueChoices.SetActive(true);
        
         textToDisplay = ""; //clear text to display;
+    }
+
+    public void orderOption()
+    {
+        DigimonController.instance.digimonInformation.order++;
+        dialogueText.text = "";
+        dialogueChoices.SetActive(false);
+        getRandomConversation();
+    }
+
+    public void chaosOption()
+    {
+        DigimonController.instance.digimonInformation.chaos++;
+        dialogueText.text = "";
+        dialogueChoices.SetActive(false);
+        getRandomConversation();
     }
 
 }

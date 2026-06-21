@@ -37,12 +37,6 @@ public class MainMenu : MonoBehaviour
         dialogueBox = gameObject.GetComponent<DialogueBox>();
         assignPortrait();
     }
-    public void ActivateStats()
-    {
-        StatsMenu.SetActive(true);
-        MainMenuUI.SetActive(false);
-        assignPortrait();
-    }
 
     void getRandomConversation()
     {
@@ -84,11 +78,6 @@ public class MainMenu : MonoBehaviour
         digimonInformation.chaos++;
         DigimonController.instance.digimonInformation.gainExp(2);
         ExitTalk();
-    }
-
-    public void Reset()
-    {
-        DigimonController.instance.Reset();
     }
 
     private void Update()

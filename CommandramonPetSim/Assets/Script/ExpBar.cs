@@ -50,6 +50,14 @@ public class ExpBar : MonoBehaviour
         {
             targetAmount = 0;
         }
-        fillValue = Mathf.Lerp(fillValue, targetAmount, fillspeed);
+        if(DigimonController.instance.digimonInformation.canEvolve() == true)
+        {
+            fillBar.color = Color.blue;
+        }
+        else
+        {
+            fillBar.color = Color.white;
+        }
+         fillValue = Mathf.Lerp(fillValue, targetAmount, fillspeed);
     }
 }

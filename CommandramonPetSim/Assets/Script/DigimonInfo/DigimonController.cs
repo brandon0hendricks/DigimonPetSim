@@ -72,17 +72,6 @@ public class DigimonController : MonoBehaviour
             moving = true;
         }
     }
-
-
-    public void Reset() //Used to reset the digimon information when the player dies or wants to start over
-    {
-        digimonInformation.level = 0;
-        digimonInformation.order = 0;
-        digimonInformation.chaos = 0;
-        digimonInformation.exp = 0;
-        moving = false;
-    }
-
     public void StartGainingExpCoroutine()
     {
 

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DigimonType
   typeName: Commandramon
   animator: {fileID: 9100000, guid: 5584f61b522ddaf40823259570f4ec19, type: 2}
-  evolveLevel: 10
   digimonPortrait: {fileID: -8054226912570311282, guid: 12b7447383c0170488efce49989a6124, type: 3}
-  OrderEvolution: {fileID: 0}
-  ChaosEvolution: {fileID: 0}
-  junkEvolution: {fileID: 0}
+  digimonLevelEnum: 1
+  OrderEvolution: {fileID: 11400000, guid: 1cb4e59a00fedee459ac0f808decd93e, type: 2}
+  ChaosEvolution: {fileID: 11400000, guid: a854cf2c1edeb8e408ba4d5d0a73d1b2, type: 2}
+  junkEvolution: {fileID: 11400000, guid: 1cb4e59a00fedee459ac0f808decd93e, type: 2}
