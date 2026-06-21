@@ -9,7 +9,10 @@ public class DigimonInformation : ScriptableObject
 
     //basic information about the digimon
     public int level;
-    public int exp;
+    [SerializeField]int evolveLevel = 1;
+    public float exp;
+    [HideInInspector]public float maxExp;
+    public float baseMaxExp = 5;
 
     public DigimonType digimonType;
 
@@ -18,6 +21,10 @@ public class DigimonInformation : ScriptableObject
     public int order;
 
 
+    private void Awake()
+    {
+        maxExp = (baseMaxExp + level);
+    }
     //changes animator
     public void setDigimonAnimator(DigimonController controller)
     {
@@ -26,32 +33,68 @@ public class DigimonInformation : ScriptableObject
 
     void changeDigimonType(DigimonType newType)
     {
-        digimonType = newType;
+        digimonType = newType;  
     }
     public void gainExp(int expGained) //This is called when the player wins a battle, it adds exp and checks if the digimon should evolve
     {
         exp += expGained;
-        if (exp >= 2)
+        if (exp >= maxExp)
         {
+            maxExp = (baseMaxExp + level);
             level++;
             exp = 0;
         }
     }
 
-    public void Evolve(string evolutionType) //gets the next evolutin and sets the new digimon type
+    public bool canEvolve()
     {
-        switch (evolutionType)
+        if (level >= evolveLevel)
         {
-            case "order":
-                changeDigimonType(digimonType.OrderEvolution);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    void getEvolveLevel()
+    {
+        switch (digimonType.digimonLevelEnum)
+        {
+            case DigimonType.DigimonLevelEnum.InTraining:
+                evolveLevel = 1; 
+            break;
+            case DigimonType.DigimonLevelEnum.Rookie:
+                evolveLevel = 2;
                 break;
-            case "chaos":
-                changeDigimonType(digimonType.ChaosEvolution);
+            case DigimonType.DigimonLevelEnum.Champion:
+                evolveLevel = 3;
                 break;
-            default:
-                changeDigimonType(digimonType.junkEvolution);
+            case DigimonType.DigimonLevelEnum.Ultimate:
+                evolveLevel = 3;
+                break;
+            case DigimonType.DigimonLevelEnum.Mega:
+                evolveLevel = 4;
                 break;
         }
+    }
+
+    public void Evolve() //gets the next evolutin and sets the new digimon type
+    {
+        if(order > chaos)
+        {
+            changeDigimonType(digimonType.OrderEvolution);
+        }
+        else if(order < chaos)
+        {
+            changeDigimonType(digimonType.ChaosEvolution);
+        }
+        else
+        {
+            changeDigimonType(digimonType.junkEvolution);
+        }
+        getEvolveLevel();
     }
 }
     

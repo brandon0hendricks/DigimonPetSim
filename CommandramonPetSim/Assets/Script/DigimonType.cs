@@ -13,8 +13,8 @@ public class DigimonType : ScriptableObject
     DigimonTypeEnum digimonTypeEnum;
     enum DigimonAttributeEnum { Fire, Water, Earth, Wind, Light, Dark };
     DigimonAttributeEnum digimonAttributeEnum;
-    enum DigimonLevelEnum { Rookie, Champion, Ultimate, Mega };
-    DigimonLevelEnum digimonLevelEnum;
+    public enum DigimonLevelEnum { InTraining, Rookie, Champion, Ultimate, Mega };
+    public DigimonLevelEnum digimonLevelEnum;
 
     public DigimonType OrderEvolution;
     public DigimonType ChaosEvolution;

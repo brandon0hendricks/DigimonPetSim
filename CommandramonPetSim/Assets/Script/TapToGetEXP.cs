@@ -30,7 +30,6 @@ public class TapToGetEXP : MonoBehaviour
     {
         Vector3 position = Camera.main.ScreenToWorldPoint(tapPosition.ReadValue<Vector2>());
         position.z = transform.position.z;
-        Debug.Log(position);
         GameObject expCreated = Instantiate(Exp, position, Quaternion.identity);
         expCreated.GetComponent<ExpBehavior>().digimon = transform;
 

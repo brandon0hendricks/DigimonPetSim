@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExpBehavior
   digimon: {fileID: 0}
-  angleRange: 20
+  angleRange: 37.4
   directionChangeSpeed: 1.5
   baseSpeed: 1.2
 --- !u!61 &2420780217390277424

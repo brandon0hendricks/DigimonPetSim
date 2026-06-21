@@ -41,15 +41,11 @@ public class DigimonController : MonoBehaviour
     private void Update()
     {
         controlMovement();
-        if(digimonInformation.level == 1 && digimonInformation.digimonType.typeName != "Commandramon")
-        {
-            startEvolution();
-        }
     }
 
     
 
-    void startEvolution() //Starts evolution process, triggers animation and freezes movement
+    public void startEvolution() //Starts evolution process, triggers animation and freezes movement
     {
         inAction = true;
         digimonAnimator.SetTrigger("evolve");
@@ -57,18 +53,10 @@ public class DigimonController : MonoBehaviour
 
 
     //Function is called at the end of the evolution animation
-    void evolve() //this triggers the change in digimon information and the change in the digimon visualy
+    void Evolve() //this triggers the change in digimon information and the change in the digimon visualy
     {
-        if(digimonInformation.order >= digimonInformation.chaos)
-        {
-            digimonInformation.Evolve("order");
-            digimonInformation.setDigimonAnimator(this);
-        }
-        else
-        {
-            digimonInformation.Evolve("chaos");
-            digimonInformation.setDigimonAnimator(this);
-        }
+        digimonInformation.Evolve();
+        digimonInformation.setDigimonAnimator(this);
         inAction = false;
     }
 

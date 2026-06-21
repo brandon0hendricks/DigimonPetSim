@@ -21,7 +21,6 @@ public class ExpBehavior : MonoBehaviour
         targetPosition = digimon.position - transform.position;
         getStartDirection();
         rb = GetComponent<Rigidbody2D>();
-        Debug.Log(targetPosition);
         StartCoroutine(Accelerate());
        
     }
