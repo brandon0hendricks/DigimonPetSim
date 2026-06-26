@@ -4,60 +4,48 @@ using TMPro;
 
 public class ExpBar : MonoBehaviour
 {
-
-
-    [SerializeField]Image fillBar;
-
+    [SerializeField] Image fillBar;
+    [SerializeField] TextMeshProUGUI leveltext;
     //Values for fill
     float maxExp;
     float currentExp;
+
     float fillValue;
+    public float fillspeed = 2f;
     float targetAmount;
 
+
+    DigimonInformation digimonInfo;
     int level;
-    [SerializeField]TextMeshProUGUI leveltext;
-
-    public float fillspeed = 2f;
-
 
     private void Start()
     {
         fillBar.fillAmount = currentExp;
+        digimonInfo = DigimonController.instance.digimonInformation;
+
     }
     void getValues()
     {
-        maxExp = DigimonController.instance.digimonInformation.maxExp;
-        currentExp = DigimonController.instance.digimonInformation.exp;
-        level = DigimonController.instance.digimonInformation.level;
+        maxExp = digimonInfo.maxExp;
+        currentExp = digimonInfo.exp;
+        level = digimonInfo.level;
     }
 
     // Update is called once per frame
     void Update()
     {
+        getValues();
         getCurrentFill();
         fillBar.fillAmount = fillValue;
         leveltext.text = level.ToString();
-        getValues();
     }
 
     void getCurrentFill()
     {
-        if (currentExp != 0)
-        {
-            targetAmount = currentExp / maxExp;
-        }
-        else
-        {
-            targetAmount = 0;
-        }
-        if(DigimonController.instance.digimonInformation.canEvolve() == true)
-        {
-            fillBar.color = Color.blue;
-        }
-        else
-        {
-            fillBar.color = Color.white;
-        }
-         fillValue = Mathf.Lerp(fillValue, targetAmount, fillspeed);
+        targetAmount = currentExp != 0 ? currentExp / maxExp : 0;
+
+        fillBar.color = digimonInfo.canEvolve() ? Color.red : Color.white;
+  
+        fillValue = Mathf.Lerp(fillValue, targetAmount, fillspeed);
     }
 }

@@ -53,14 +53,7 @@ public class DigimonInformation : ScriptableObject
 
     public bool canEvolve()
     {
-        if (level >= evolveLevel)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return level >= evolveLevel ? true : false;
     }
 
     void getEvolveLevel()

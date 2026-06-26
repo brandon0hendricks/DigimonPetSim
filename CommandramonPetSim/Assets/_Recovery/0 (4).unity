@@ -700,10 +700,10 @@ RectTransform:
   - {fileID: 1461768708}
   m_Father: {fileID: 87340719}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.78170323}
-  m_AnchorMax: {x: 1, y: 0.9760001}
-  m_AnchoredPosition: {x: 302.213, y: -261}
-  m_SizeDelta: {x: -604.4262, y: 484}
+  m_AnchorMin: {x: 0.75375, y: 0.5}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.7130127, y: -25}
+  m_SizeDelta: {x: -1.4262, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &219378157
 MonoBehaviour:
@@ -1725,7 +1725,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.15551326}
-  m_AnchoredPosition: {x: 0, y: -4.586426}
+  m_AnchoredPosition: {x: 0, y: -4.5864105}
   m_SizeDelta: {x: 0, y: -10.002686}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &697298147
@@ -1979,10 +1979,10 @@ RectTransform:
   - {fileID: 1610717224}
   m_Father: {fileID: 87340719}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.00024414062}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -0.00033569}
+  m_SizeDelta: {x: 800, y: 1422}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &858499377
 MonoBehaviour:
@@ -2891,7 +2891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ExpBar
   fillBar: {fileID: 196753891}
   leveltext: {fileID: 1313436654}
-  fillspeed: 2
+  fillspeed: 0.05
 --- !u!1 &1470362562
 GameObject:
   m_ObjectHideFlags: 0
@@ -3403,10 +3403,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 858499376}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -4.0937, y: 11.1851}
+  m_SizeDelta: {x: 899.266, y: 1474.5337}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1820195613
 MonoBehaviour:

@@ -16,6 +16,7 @@ public class DigimonController : MonoBehaviour
 
     public bool moving;
     public bool inAction;
+    private Vector3 originalScale;
 
     IEnumerator ExpGain;
 
@@ -37,6 +38,7 @@ public class DigimonController : MonoBehaviour
     {
         digimonAnimator = GetComponent<Animator>();
         ExpGain = flavorGainExp();
+        originalScale = gameObject.transform.localScale;
     }
     private void Update()
     {
@@ -63,18 +65,11 @@ public class DigimonController : MonoBehaviour
     void controlMovement()
     {
         digimonAnimator.SetBool("moving", moving);
-        if (inAction)
-        {
-            moving = false;
-        }
-        else
-        {
-            moving = true;
-        }
+        moving = inAction ? true : false; 
     }
     public void StartGainingExpCoroutine()
     {
-
+        digimonInformation.gainExp(1);
         StopCoroutine(ExpGain);
         ExpGain = flavorGainExp();
         transform.localScale = Vector3.one;
@@ -84,19 +79,28 @@ public class DigimonController : MonoBehaviour
     //Adds impact to gaining exp
     IEnumerator flavorGainExp()
     {
-        Vector3 sizeincrease = transform.localScale * 1.02f;
-        while(transform.localScale != sizeincrease)
+        Vector3 targetScale = originalScale * 1.05f;
+        float duration = 0.1f;
+        float elapsed = 0f;
+
+        // Punch Out
+        while (elapsed < duration)
         {
-            transform.localScale = Vector3.Lerp(transform.localScale, sizeincrease, .15f);
+            elapsed += Time.deltaTime;
+            transform.localScale = Vector3.Lerp(originalScale, targetScale, elapsed / duration);
             yield return null;
         }
-        digimonInformation.gainExp(1);
-        while (transform.localScale != Vector3.one)
+
+        // Return back to standard sizing safely
+        elapsed = 0f;
+        while (elapsed < duration)
         {
-            transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one, .15f);
+            elapsed += Time.deltaTime;
+            transform.localScale = Vector3.Lerp(targetScale, originalScale, elapsed / duration);
             yield return null;
         }
-        transform.localScale = Vector3.one;
+
+        transform.localScale = originalScale;
     }
 }
 

@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d2eb31c6023310429ebd5db581aa3b7, type: 3}
   m_Name: DigimonInformation
   m_EditorClassIdentifier: Assembly-CSharp::DigimonInformation
-  level: 0
-  evolveLevel: 0
-  exp: 0
-  maxExp: 10
+  level: 3
+  evolveLevel: 5
+  exp: 5
+  maxExp: 8
   baseMaxExp: 5
-  maxLevel: 60
-  digimonType: {fileID: 11400000, guid: a854cf2c1edeb8e408ba4d5d0a73d1b2, type: 2}
+  maxLevel: 100
+  digimonType: {fileID: 11400000, guid: 0e55f61ca740f18428cd239664c7b631, type: 2}
   chaos: 0
   order: 0
   baseDigimonType: {fileID: 11400000, guid: 0e55f61ca740f18428cd239664c7b631, type: 2}
