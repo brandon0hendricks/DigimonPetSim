@@ -9,7 +9,7 @@ public class DialogueBox : MonoBehaviour
     [SerializeField] public TextMeshProUGUI dialogueText;
     [HideInInspector] public static bool inDialogue = false;
 
-    private float textSpeed = 0.04f;
+    private float textSpeed = 0.01f;
     public GameObject dialogueChoices;
 
     [SerializeField] private TextMeshProUGUI orderChoice;

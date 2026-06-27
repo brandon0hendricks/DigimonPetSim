@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b910b08eadf17654d8718d2f682910e5, type: 3}
-  m_Name: Sealsdramon
+  m_Name: CargoDramon
   m_EditorClassIdentifier: Assembly-CSharp::DigimonType
   typeName: Sealsmon
-  animator: {fileID: 9100000, guid: a4e263c9747207f4695c22eaf9b167fa, type: 2}
+  animator: {fileID: 9100000, guid: c836aed117437a149ba9dc454d52da26, type: 2}
   digimonPortrait: {fileID: -7884899326458932892, guid: 03c583d94416c0d4d90e46f2de0fcec9, type: 3}
-  digimonLevelEnum: 2
-  OrderEvolution: {fileID: 11400000, guid: d393e42f958a726469dc4ba255d628b8, type: 2}
-  ChaosEvolution: {fileID: 11400000, guid: 3d4f42142aa1bab4585f22c898e337b1, type: 2}
-  junkEvolution: {fileID: 11400000, guid: 3d4f42142aa1bab4585f22c898e337b1, type: 2}
+  digimonLevelEnum: 3
+  OrderEvolution: {fileID: 11400000, guid: 1acdf82236fd7e2448cd1cdab95af97e, type: 2}
+  ChaosEvolution: {fileID: 11400000, guid: 1acdf82236fd7e2448cd1cdab95af97e, type: 2}
+  junkEvolution: {fileID: 11400000, guid: 1acdf82236fd7e2448cd1cdab95af97e, type: 2}

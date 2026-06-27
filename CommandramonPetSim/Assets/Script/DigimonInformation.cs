@@ -64,16 +64,16 @@ public class DigimonInformation : ScriptableObject
                 evolveLevel = 5; 
             break;
             case DigimonType.DigimonLevelEnum.Rookie:
-                evolveLevel = 25;
+                evolveLevel = 10;
                 break;
             case DigimonType.DigimonLevelEnum.Champion:
-                evolveLevel = 25;
+                evolveLevel = 15;
                 break;
             case DigimonType.DigimonLevelEnum.Ultimate:
-                evolveLevel = 55;
+                evolveLevel = 90;
                 break;
             case DigimonType.DigimonLevelEnum.Mega:
-                evolveLevel = 85;
+                evolveLevel = 90;
                 break;
         }
     }

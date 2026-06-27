@@ -42,7 +42,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: eaf19bb840bef61498ae7dbd0a368685, type: 2}
+  m_Motion: {fileID: 7400000, guid: cfe785eac16fe234ba55f0dbbf54efef, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -56,7 +56,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Idle
-  m_Speed: 0.4
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 2439463762449969789}
@@ -69,7 +69,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -302369501250538943, guid: 03c583d94416c0d4d90e46f2de0fcec9, type: 3}
+  m_Motion: {fileID: -2556434934785583804, guid: 03c583d94416c0d4d90e46f2de0fcec9, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -106,7 +106,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Sealsdramon
+  m_Name: Tankdramon
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: moving
@@ -199,7 +199,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Walk
-  m_Speed: 0.4
+  m_Speed: 0.7
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -5527570177270769148}
@@ -212,7 +212,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -302369501250538943, guid: 03c583d94416c0d4d90e46f2de0fcec9, type: 3}
+  m_Motion: {fileID: -2556434934785583804, guid: 03c583d94416c0d4d90e46f2de0fcec9, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -264,7 +264,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: e3a1cc8fef6602f468df148d1b2206f4, type: 2}
+  m_Motion: {fileID: 7400000, guid: 50af630df866da84f8de3670f82d5f73, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
